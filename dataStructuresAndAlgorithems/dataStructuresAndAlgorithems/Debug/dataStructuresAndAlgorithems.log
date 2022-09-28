@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Nodan\source\repos\dataStructuresAndAlgorithems\dataStructuresAndAlgorithems\Source.cpp(130): warning C4715: 'String::SubStringusr': not all control paths return a value
+C:\Users\Nodan\source\repos\dataStructuresAndAlgorithems\dataStructuresAndAlgorithems\Source.cpp(108): warning C4715: 'String::Length': not all control paths return a value
+  dataStructuresAndAlgorithems.vcxproj -> C:\Users\Nodan\source\repos\dataStructuresAndAlgorithems\Debug\dataStructuresAndAlgorithems.exe
