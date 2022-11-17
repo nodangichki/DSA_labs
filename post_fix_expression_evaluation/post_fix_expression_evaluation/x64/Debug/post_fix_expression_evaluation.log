@@ -1,0 +1,3 @@
+﻿  post_fix_expression_evaluation.cpp
+C:\Users\Nodan\source\repos\post_fix_expression_evaluation\post_fix_expression_evaluation\post_fix_expression_evaluation.cpp(156,23): warning C4244: 'argument': conversion from 'Type' to 'int', possible loss of data
+  post_fix_expression_evaluation.vcxproj -> C:\Users\Nodan\source\repos\post_fix_expression_evaluation\x64\Debug\post_fix_expression_evaluation.exe

@@ -80,6 +80,7 @@ void Book::Search(string item) {
 				cout << " Auther = " << auther << endl;
 				cout << " Price = " << prc << endl;
 				cout << endl << endl << endl;
+				break;
 			}
 			else {
 				cout << "item not found in the records!" << endl;
@@ -120,8 +121,9 @@ void Book::Del(int R_no) {
 			}
 			else
 				outfile << title << "\\" << auther << "\\" << prc << endl;
-		
+
 		}
+		
 	}
 	infile.close();
 	outfile.close();
@@ -181,7 +183,7 @@ void Book::Update(int R_no) {
 int main() {
 	Book my_books;
 	char choice;
-	string search_item;
+	char search_item[80];
 	int Record_no;
 	
 	while (1) {
@@ -204,7 +206,8 @@ int main() {
 		case 's':
 		case 'S': {
 			cout << "enter title, author or price you want to search: ";
-			cin >> search_item;
+			cin.ignore(80, '\n');
+			cin.getline(search_item, 80);
 			my_books.Search(search_item);
 			break;
 		}
@@ -213,6 +216,7 @@ int main() {
 			cout << "enter record number: ";
 			cin >> Record_no;
 			my_books.Del(Record_no);
+			break;
 		}
 		case 'u':
 		case 'U': {
