@@ -91,7 +91,7 @@ private:
 	double Evaluate(Tree_Node* node);
 public:
 	Binary_Expression_Tree() { root = NULL; };
-	Binary_Expression_Tree(char Postfix[]);
+	Binary_Expression_Tree(string Postfix);
 	double Evaluate();
 	void Pre_Order();
 	void In_Order();
@@ -118,7 +118,7 @@ Is_Operator(char c) {
 	return false;
 }
 Binary_Expression_Tree ::
-Binary_Expression_Tree(char Postfix[]) {
+Binary_Expression_Tree(string Postfix) {
 	// Traverse through every character of
 	// input expression
 	for (int i = 0; Postfix[i]; i++) {
@@ -344,7 +344,7 @@ string In2Post::Convert() {
 		c = expr[i];
 		if (c == ' ' || c == '\t') continue;
 		else if (is_operand(c)) {
-			cout << c << " ";
+			//cout << c << " ";
 			finale += c;
 			finale += " ";
 		}
@@ -356,7 +356,7 @@ string In2Post::Convert() {
 				if (p == '(')
 					break;
 				else {
-					cout << p << " ";
+					//cout << p << " ";
 					finale += p;
 					finale += " ";
 				}
@@ -367,7 +367,7 @@ string In2Post::Convert() {
 			{
 				p = s.Pop();
 				if (p != ')' && p != '(') {
-					cout << p << " ";
+					//cout << p << " ";
 					finale += p;
 					finale += " ";
 				}
@@ -378,7 +378,7 @@ string In2Post::Convert() {
 	while (!s.IsEmpty()) {
 		p = s.Pop();
 		if (p != ')' && p != '(') {
-			cout << p << " ";
+			//cout << p << " ";
 			finale += p;
 			finale += " ";
 		}
@@ -392,63 +392,16 @@ string In2Post::Convert() {
 
 
 int main() {
-	/*char chararr[40] = " ((((3+1)*3)/((9-5)+2))-((3*(7-4))+6))";
-
-	Binary_Expression_Tree BET(chararr);
-
-	cout << " -:Pre_Order Traversal:-\n";
-	BET.Pre_Order();
-
-	cout << "\n\n -:In_Order Traversal:-\n";
-	BET.In_Order();
+	
+	string expression = "( ( ( ( 3 + 1 ) * 3 ) / ( ( 9 - 5 ) + 2 ) ) - ( ( 3 * ( 7 - 4 ) ) + 6 ) ) ";
+	cout << "given expression:- " << expression;
+	In2Post I2P1(expression);
+	string conv4 = I2P1.Convert();
+	cout << "\n\nconverted to postfix:-" <<conv4<<endl;
+	Binary_Expression_Tree BET(conv4);
+	cout << "\nAnswer = " << BET.Evaluate()<<"\n\n";
 	cout << endl;
-
-	cout << "\n\n-:Post_Order Traversal:-\n";
-	BET.Post_Order();
-	cout << endl;
-
-	cout << "Answer = " << BET.Evaluate();
-	cout << endl;
-
-
-	system("PAUSE"); return 0;*/
-
-
-	char expression[40] = "((((3+1)*3)/((9-5)+2))-((3*(7-4))+6))";
-	In2Post I2P(expression);
-	string converted = I2P.Convert();
-	cout << converted;
-
-	int n = converted.length();
-
-	// declaring character array
-	char char_array[40];
-
-	// copying the contents of the
-	// string to char array
-	strcpy(char_array, converted.c_str());
-
-	for (int i = 0; i < 40; i++)
-		cout << char_array[i];
-
-	Binary_Expression_Tree BET(char_arr	ay);
-
-	cout << " -:Pre_Order Traversal:-\n";
-	BET.Pre_Order();
-
-	cout << "\n\n -:In_Order Traversal:-\n";
-	BET.In_Order();
-	cout << endl;
-
-	cout << "\n\n-:Post_Order Traversal:-\n";
-	BET.Post_Order();
-	cout << endl;
-
-	cout << "Answer = " << BET.Evaluate();
-	cout << endl;
-
-
 	system("PAUSE"); return 0;
-
+	
 
 }

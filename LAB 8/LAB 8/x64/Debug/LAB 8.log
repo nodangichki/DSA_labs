@@ -1,3 +1,2 @@
 ﻿  LAB 8.cpp
-C:\Users\Nodan\source\repos\LAB 8\LAB 8\LAB 8.cpp(422,28): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Nodan\source\repos\LAB 8\LAB 8\LAB 8.cpp(429,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  LAB 8.vcxproj -> C:\Users\Nodan\source\repos\LAB 8\x64\Debug\LAB 8.exe
