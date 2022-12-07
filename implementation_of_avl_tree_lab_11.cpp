@@ -19,11 +19,33 @@ class AVL_Tree {
 	int   Get_Balance(Node* N);
 	void  Pre_Order(Node* node);
 	Node* Insert(Node* node, datae key);
+    bool Search(datae key, Node*);
 public:
 	AVL_Tree() { root = NULL; }
 	void  Pre_Order();
 	void Insert(datae key);
+    bool Search(datae key);
 };
+
+bool AVL_Tree::Search(datae key) {
+
+    return Search(key, root);
+
+}
+bool AVL_Tree::Search(datae key,Node* node) {
+    bool found = false;
+    // node is not present
+    if (node == NULL)
+        return false;
+    // if node with same data is found
+    if (key == node->data)
+        return true;
+    else if (key > node->data)
+        found = Search(key, node->right);
+    else
+        found = Search(key, node->left);
+    return found;
+}
 // A utility function to get maximum of two integers  
 datae AVL_Tree::Max(datae a, datae b) {
 	return (a > b) ? a : b;
@@ -161,6 +183,7 @@ int main()
         case 's':
         case'S':
             cout << "Enter Character: "; cin >> character;
+            cout << atree.Search(character) << endl;
             break;
         case 'p':
         case'P':
@@ -175,20 +198,7 @@ int main()
 
 
     }
-    /*
-    atree.Insert(5);  atree.Pre_Order(); cout << endl;
-    atree.Insert(6);  atree.Pre_Order(); cout << endl;
-    atree.Insert(7);  atree.Pre_Order(); cout << endl;
-    atree.Insert(16); atree.Pre_Order(); cout << endl;
-    atree.Insert(15); atree.Pre_Order(); cout << endl;
-    atree.Insert(14); atree.Pre_Order(); cout << endl;
-    atree.Insert(13); atree.Pre_Order(); cout << endl;
-    atree.Insert(12); atree.Pre_Order(); cout << endl;
-    atree.Insert(11); atree.Pre_Order(); cout << endl;
-    atree.Insert(10); atree.Pre_Order(); cout << endl;
-    atree.Insert(8);  atree.Pre_Order(); cout << endl;
-    atree.Insert(9);  atree.Pre_Order(); cout << endl;
-    */
+   
     system("PAUSE");  return 0;
 }
 
