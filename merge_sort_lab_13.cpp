@@ -1,4 +1,5 @@
 #include <iostream>  
+#include<string>
 using namespace std;
 typedef string Type;
 void merge(Type a[], int low, int high, int mid) {
@@ -44,11 +45,16 @@ void mergesort(Type a[], int low, int high) {
     return;
 }
 int main() {
-    //int  i, arr[] = { 38, 27, 43, 3, 9, 82, 10 };
-    int sz = 10;
-    string names[10];
+    
+    int sz;
+    cout << "enter number of names: ";
+    cin >> sz;
+   cout << endl;
+    string* names = new string[sz];
+    cin.ignore(200, '\n');
     for (int i = 0; i < sz; i++) {
-        cout << "enter name " << i + 1 << " :"; cin >> names[i];
+        cout << "enter name " << i+1 << " :"; 
+        getline(cin, names[i]);
     }
     cout << "before sorting : ";
     for (int i = 0; i < sz; i++)
